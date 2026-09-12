@@ -11,8 +11,12 @@ Choose your city on the [global event page](https://aitinkerers.org/hackathons/g
 **What we inherited**
 <!-- Include this starter kit and any reused examples. -->
 
+The Agents, Everywhere Web template: CopilotKit runtime/context/frontend tools, the browser approval-storage pattern, and the server-side Ambiguous MCP adapter.
+
 **What we built during the hackathon**
 <!-- Describe the new core interaction and point to its implementation. Running the supplied incident demo alone does not establish a new project. -->
+
+Deal Rescue Coworker: the ACME Enterprise Renewal workspace, deterministic deal evidence, blocker analysis context, rescue-plan instructions, and approval-gated security-review task workflow.
 
 ## Title and description
 

@@ -1,10 +1,10 @@
 <div align="center">
 
-# Agents, Everywhere Hackathon Starter Kit
+# Deal Rescue Coworker
 
 ![Agents, Everywhere hackathon — OpenAI, CopilotKit, OpenRouter, Exa, Auth0, and Ambiguous AI](assets/banner.png)
 
-**Build an agent that belongs where people already work, talk, and live.**
+**Your AI coworker for deals that are about to die.**
 
 [Overview](#overview) · [Get started](#get-started) · [Templates](#templates) · [Coding agent](#coding-agent) · [Resources](#resources)
 

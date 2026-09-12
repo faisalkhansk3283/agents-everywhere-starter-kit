@@ -17,7 +17,7 @@ const command = z.discriminatedUnion("operation", [
   z.object({ operation: z.literal("deny"), proposalId: z.uuid() }).strict(),
 ]);
 const setup =
-  "Set AMBIGUOUS_API_KEY in root .env and restart the web app. Select sample incidents now; saving and retrieval require a real Ambiguous workspace.";
+  "Set AMBIGUOUS_API_KEY in root .env and restart the web app. The ACME deal remains visible; saving and read-back require a real Ambiguous workspace.";
 
 async function closeConnection(connection: { close(): Promise<void> }) {
   try {

@@ -65,7 +65,7 @@ export function WorkplaceFollowups({
           <strong>Connect a workspace to save tasks</strong>
           <p>{status.message}</p>
           <p>
-            You can still inspect sample incidents. No browser-only task will
+            You can still inspect the deterministic deal context. No browser-only task will
             be created as a stand-in.
           </p>
         </div>

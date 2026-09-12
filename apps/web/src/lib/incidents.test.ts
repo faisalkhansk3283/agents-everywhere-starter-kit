@@ -1,29 +1,21 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { findIncident, workspaceContext } from "./incidents";
+import { deal, workspaceContext } from "./incidents";
 import type { WorkplaceTask } from "./followup-types";
 
-test("selection changes the shared incident and timeline together", () => {
-  const checkout = workspaceContext("INC-1042", []);
-  const notifications = workspaceContext("INC-1043", []);
-  assert.equal(checkout.selectedIncident.service, "Checkout API");
-  assert.equal(notifications.selectedIncident.service, "Notifications");
-  assert.match(notifications.selectedIncident.timeline[0].detail, /emails/);
-  assert.equal(notifications.availableIncidents.length, 2);
+test("the selected deal is the deterministic ACME rescue scenario", () => {
+  assert.equal(deal.company, "ACME Corp");
+  assert.equal(deal.name, "Enterprise Renewal");
+  assert.equal(deal.value, 240000);
+  assert.equal(deal.stage, "Stalled");
+  assert.equal(deal.blockers.length, 4);
 });
 
-test("workspace context labels sample incidents and provider follow-ups", () => {
-  const tasks: WorkplaceTask[] = [
-    {
-      id: "11111111-1111-4111-8111-111111111111",
-      title: "Check pool metrics",
-      description: "Provider task details\nagents-everywhere:INC-1042",
-      url: null,
-    },
-  ];
-  const context = workspaceContext("INC-1042", tasks);
-  assert.throws(() => findIncident("unknown"), /Unknown incident/);
-  assert.match(context.dataSource, /Fictional sample/);
+test("workspace context distinguishes deterministic deal facts from provider records", () => {
+  const tasks: WorkplaceTask[] = [{ id: "11111111-1111-4111-8111-111111111111", title: "Assign security review", description: "Deal Rescue task", url: null }];
+  const context = workspaceContext(tasks);
+  assert.match(context.dataSource, /deterministic/);
   assert.match(context.dataSource, /Ambiguous/);
-  assert.deepEqual(context.followups, tasks);
+  assert.equal(context.selectedDeal.id, deal.id);
+  assert.deepEqual(context.verifiedWorkplaceTasks, tasks);
 });

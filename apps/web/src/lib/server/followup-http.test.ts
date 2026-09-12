@@ -227,7 +227,7 @@ test("cleanup failures do not mask successful provider responses", async (t) => 
         {
           id: "22222222-2222-4222-8222-222222222222",
           title: "Compare metrics",
-          description: "agents-everywhere:INC-1042",
+          description: "deal-rescue:deal-acme-enterprise-renewal",
           url: null,
         },
       ];
